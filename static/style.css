@@ -1,0 +1,45 @@
+root {
+  --bg: #e6ebf1;
+  --board: #fbfcfe;
+  --ink: #16243a;
+  --line: #c3cedc;
+  --user: #2a5cb8;
+  --peer: #e3eaf4;
+  --selected: #aac7f0;
+  --wrong-bg: #f8dcd9;
+  --wrong: #c23b32;
+  --muted: #5b6b82;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 20px 12px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+main { width: 100%; max-width: 480px; }
+
+header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+h1 { margin: 0; font-size: 2rem; }
+#timer { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.bar { display: flex; gap: 8px; margin-bottom: 12px; }
+select, button { font: inherit; color: inherit; }
+select { flex: 1; padding: 9px; border-radius: 8px; border: 1px solid var(--line); background: var(--board); }
+.primary { padding: 9px 16px; border: 0; border-radius: 8px; background: var(--ink); color: var(--board); cursor: pointer; }
+
+/* The 9x9 board: a grid with 9 equal columns */
+#board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  aspect-ratio: 1;
+  background: var(--board);
+  border: 3px solid var(--ink);
+  border-radius: 6px;
+}
